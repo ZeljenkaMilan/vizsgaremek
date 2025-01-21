@@ -44,4 +44,43 @@ try {
 } catch (PDOException $e) {
     $name1 = $name2 = "Error: " . $e->getMessage(); // Display error 
 }
+
+
+// Putting the signup form data into database
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    try {
+        // Retrieve and sanitize form data
+        $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+        $tel = htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+        $adress = htmlspecialchars($_POST['adress'], ENT_QUOTES, 'UTF-8');
+
+        // Validate required fields
+        if (empty($name) || empty($email) || empty($adress)) {
+            echo "Please fill in all required fields.";
+            exit();
+        }
+
+        // Prepare SQL query for inserting into the vasarlok table
+        $sql = "INSERT INTO vasarlok (nev, telefon, email, cim) VALUES (:name, :tel, :email, :adress)";
+        $stmt = $pdo->prepare($sql);
+
+        // Bind parameters
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':tel', $tel, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':adress', $adress, PDO::PARAM_STR);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            // Redirect with success message
+            header("index.php?message=signup_success");
+            exit();
+        } else {
+            echo "Error: Unable to save data.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage(); // Handle database errors
+    }
+}
 ?>
