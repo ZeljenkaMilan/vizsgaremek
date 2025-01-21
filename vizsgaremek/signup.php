@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<?php
+require("php/connect.php");
+?>
+
 <header>
     <h1>Webshop</h1>
     <nav>
