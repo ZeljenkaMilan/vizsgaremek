@@ -19,6 +19,7 @@ require("php/connect.php");
         <a href="index.php">Home</a>
         <a href="#products">Clothes</a>
         <a href="signup.php">Sign Up</a>
+        <a href="about.php">About Us</a> <!-- New About Us tab -->
     </nav>
     <div class="cart-icon">
         <a href="billing.php">
