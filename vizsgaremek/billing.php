@@ -8,38 +8,103 @@
     <title>Billing</title>
 </head>
 <body>
-    
+
 <header>
-        <h1>Webshop</h1>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="#products">Clothes</a>
-            <a href="signup.php">Sign Up</a>
-        </nav>
-        <div class="cart-icon">
+    <h1>Webshop</h1>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="#products">Clothes</a>
+        <a href="signup.php">Sign Up</a>
+    </nav>
+    <div class="cart-icon">
         <a href="billing.php">
             <i class="fas fa-shopping-cart"></i>
         </a>
     </div>
-    </header>
+</header>
 
-    <section id="billing">
-        <h2>Your items</h2>
-        <div id="receipt">
-            <h3>Receipt</h3>
-            <ul id="cart-items"></ul>
-            <p id="total">Total: $0.00</p>
-        </div>
-    </section>
+<section id="billing">
+    <h2>Your items</h2>
+    <div id="receipt">
+        <h3>Receipt</h3>
+        <ul id="cart-items"></ul>
+        <p id="total">Total: $0.00</p>
+    </div>
+    <button id="buy-button" onclick="showModal()">Buy Now</button>
+</section>
 
+<!-- Modal for payment and shipping options -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <h3>Complete Your Purchase</h3>
+        <form id="payment-form">
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method">
+                <option value="cash">Cash on Delivery</option>
+                <option value="card">Credit Card</option>
+            </select>
 
-    </main>
+            <label for="shipping-method">Shipping Method:</label>
+            <select id="shipping-method">
+                <option value="home">Home Delivery</option>
+                <option value="pickup">Store Pickup</option>
+            </select>
 
-    <footer>
-        <p>&copy; 2025 Webshop</p>
-    </footer>
+            <button type="button" onclick="confirmPurchase()">Confirm Purchase</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+        </form>
+    </div>
+</div>
 
-    <script src="java_script/script.js"></script>
+<!-- Modal for credit card info -->
+<div id="credit-card-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>Enter Your Credit Card Information</h3>
+        <form id="credit-card-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" required>
+
+            <button type="button" onclick="processPayment()">Submit Payment</button>
+            <button type="button" onclick="closeCreditCardModal()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for address fields -->
+<div id="address-fields" style="display: none;">
+    <h3>Enter Your Address</h3>
+    <form id="address-form">
+        <label for="street">Street:</label>
+        <input type="text" id="street" placeholder="Enter your street" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="Enter your city" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" placeholder="Enter your country" required>
+    </form>
+</div>
+
+<!-- Modal for thank you message -->
+<div id="thank-you-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>Thank You!</h3>
+        <p>Your purchase has been successfully completed. We appreciate your order!</p>
+        <button onclick="closeThankYouModal()">Close</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Webshop</p>
+</footer>
+
+<script src="java_script/script.js"></script>
 
 </body>
 </html>
