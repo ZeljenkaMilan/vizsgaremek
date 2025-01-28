@@ -56,46 +56,11 @@
     </div>
 </div>
 
-<!-- Modal for credit card info -->
-<div id="credit-card-modal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <h3>Enter Your Credit Card Information</h3>
-        <form id="credit-card-form">
-            <label for="card-number">Card Number:</label>
-            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
-
-            <label for="expiry-date">Expiry Date:</label>
-            <input type="text" id="expiry-date" placeholder="MM/YY" required>
-
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" placeholder="123" required>
-
-            <button type="button" onclick="processPayment()">Submit Payment</button>
-            <button type="button" onclick="closeCreditCardModal()">Cancel</button>
-        </form>
-    </div>
-</div>
-
-<!-- Modal for address fields -->
-<div id="address-fields" style="display: none;">
-    <h3>Enter Your Address</h3>
-    <form id="address-form">
-        <label for="street">Street:</label>
-        <input type="text" id="street" placeholder="Enter your street" required>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" placeholder="Enter your city" required>
-
-        <label for="country">Country:</label>
-        <input type="text" id="country" placeholder="Enter your country" required>
-    </form>
-</div>
-
 <!-- Modal for thank you message -->
 <div id="thank-you-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <h3>Thank You!</h3>
-        <p>Your purchase has been successfully completed. We appreciate your order!</p>
+        <p id="thank-you-message"></p>
         <button onclick="closeThankYouModal()">Close</button>
     </div>
 </div>
