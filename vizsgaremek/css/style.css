@@ -60,6 +60,24 @@ main {
     padding: 20px;
 }
 
+/* Signup */
+
+.signup {
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Max width for the form */
+    text-align: center;
+}
+
+/* Form input styling */
+.signup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
 /* Product Grid */
 .product-grid {
     display: grid;
