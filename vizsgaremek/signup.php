@@ -27,7 +27,7 @@ require("php/connect.php");
     </div>
 </header>
 
-<h3>Signup for our exclusive discounts and more!</h3>
+<h3 id="signup-text">Signup for our exclusive discounts and more!</h3>
     <div class="signup">
         <form action="signup.php" method="post">
         <input type="text" name="name" placeholder="Name" required>
