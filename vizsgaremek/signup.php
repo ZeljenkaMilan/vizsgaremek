@@ -26,19 +26,18 @@ require("php/connect.php");
         </a>
     </div>
 </header>
-<h3>Signup</h3>
 
-<form action="includes/formhandler_inc.php" method="post">
-    <input type="text" name="name" placeholder="Name">
-    <input type="tel" name="tel" placeholder="Phone number">
-    <input type="text" name="email" placeholder="E-mail">
-    <input type="text" name="adress" placeholder="Adress">
+<h3>Signup for our exclusive discounts and more!</h3>
+
+<form action="signup.php" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="E-mail" required>
     <button>Signup</button>
-
 </form>
 
 <footer>
-        <p>&copy; 2025 Webshop</p>
+    <p>&copy; 2025 Webshop</p>
 </footer>
+
 </body>
 </html>
