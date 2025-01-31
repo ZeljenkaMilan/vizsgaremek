@@ -28,12 +28,14 @@ require("php/connect.php");
 </header>
 
 <h3>Signup for our exclusive discounts and more!</h3>
+    <div class="signup">
+        <form action="signup.php" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <button>Signup</button>
+        </form>
+    </div>
 
-<form action="signup.php" method="post">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <button>Signup</button>
-</form>
 
 <footer>
     <p>&copy; 2025 Webshop</p>
