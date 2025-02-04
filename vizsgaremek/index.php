@@ -38,14 +38,14 @@ require("php/connect.php");
                 <img src="kepek/th-1828587326.jpg" alt="Product 1">
                 <h3 id="name1"><?php echo htmlspecialchars($name1); ?></h3>
                 <p>$10.00</p>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10)">Buy Now</button>
+                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10)">Add to cart</button>
             </div>
 
             <div class="product">
                 <img src="kepek/th-4073543462.jpg" alt="Product 2">
                 <h3 id="name2"><?php echo htmlspecialchars($name2); ?></h3>
                 <p>$15.00</p>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)">Buy Now</button>
+                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)">Add to cart</button>
             </div>
 
         </div>
