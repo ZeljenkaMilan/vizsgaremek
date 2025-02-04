@@ -20,6 +20,7 @@
         <div class="cart-icon">
         <a href="billing.php">
             <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
         </a>
     </div>
     </header>
