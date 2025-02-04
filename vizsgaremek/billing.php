@@ -31,6 +31,20 @@
             <h3>Receipt</h3>
             <ul id="cart-items"></ul>
             <p id="total">Total: $0.00</p>
+
+            
+        <!-- Delivery Options Form -->
+        <div id="delivery-options">
+            <h4>Choose Delivery Option</h4>
+            <label for="delivery">Delivery Type:</label>
+            <select id="delivery" name="delivery">
+                <option value="home">Home Delivery</option>
+                <option value="pickup">In-Store Pickup</option>
+            </select>
+        </div>
+
+        <!-- Place Order Button -->
+        <button id="place-order-btn">Place Order</button>
         </div>
     </section>
 
