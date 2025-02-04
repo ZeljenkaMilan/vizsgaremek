@@ -50,14 +50,6 @@ require("php/connect.php");
         </div>
     </section>
 
-    <section id="billing">
-        <h2>Your items</h2>
-        <div id="receipt">
-            <h3>Receipt</h3>
-            <ul id="cart-items"></ul>
-            <p id="total">Total: $0.00</p>
-        </div>
-    </section>
 </main>
 
 <footer>
