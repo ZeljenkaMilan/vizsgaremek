@@ -38,7 +38,7 @@ require("php/connect.php");
         </form>
     </div>
 
-
+<script src="java_script/script.js"></script>
 <footer>
     <p>&copy; 2025 Webshop</p>
 </footer>
