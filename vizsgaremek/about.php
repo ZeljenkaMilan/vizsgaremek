@@ -49,6 +49,7 @@ require("php/connect.php");
     </section>
 </main>
 
+<script src="java_script/script.js"></script>
 <footer>
     <p>&copy; 2025 Webshop</p>
 </footer>
