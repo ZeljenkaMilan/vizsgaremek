@@ -321,3 +321,166 @@ footer {
 #pay-now-btn:hover {
     background-color: #45a049;
 }
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #ffc107;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    color: #ffc107;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.cart-icon a {
+    color: #ffc107;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.cart-icon a:hover {
+    color: #ffd54f;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Billing Section */
+#billing {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.3);
+}
+
+h2, h3, h4 {
+    text-align: center;
+    color: #ffc107;
+}
+
+#receipt {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+#total {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Delivery Options */
+#delivery-options {
+    margin-top: 15px;
+    padding: 10px;
+    background: #333;
+    border-radius: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+/* Place Order Button */
+#place-order-btn {
+    display: block;
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#place-order-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
