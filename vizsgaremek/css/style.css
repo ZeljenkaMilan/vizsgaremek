@@ -34,6 +34,9 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center; 
 }
+
+
+/* Cart */
 .cart-icon {
     position: absolute;
     top: 50%;
@@ -67,7 +70,7 @@ main {
 
 
 
-/* Signup Text Styling */
+/* Signup  */
 #signup-text {
     font-size: 2rem; /* Increase font size */
     padding: 20px 0; /* Add padding above and below */
@@ -76,7 +79,6 @@ main {
     color: #ffc107; /* Optional: gives the text a yellow color */
 }
 
-/* Signup */
 
 .signup {
     padding: 20px; /* Slight padding inside the form */
@@ -87,7 +89,7 @@ main {
     margin: 30px auto; /* Added a little vertical margin for balance */
 }
 
-/* Form input styling */
+
 .signup input {
     width: 100%;
     padding: 10px;
@@ -95,7 +97,8 @@ main {
     font-size: 16px;
 }
 
-/* Product Grid */
+
+/* Product  */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(minmax(200px, 1fr));
@@ -144,6 +147,7 @@ main {
 }
 
 
+
 /* Billing Section */
 #receipt {
     background: #222;
@@ -158,6 +162,8 @@ main {
     font-size: 1.2rem;
     margin-top: 10px;
 }
+
+
 
 /* Sign Up Form */
 form {
@@ -191,6 +197,8 @@ form button:hover {
     transform: scale(1.05);
 }
 
+
+
 /* Footer */
 footer {
     margin-top: auto;  /* Pushes footer to the bottom */
@@ -200,6 +208,8 @@ footer {
     padding: 10px;
 }
 
+
+/* About section */
 #about {
     max-width: 900px; 
     margin: 50px auto; 
@@ -275,6 +285,8 @@ footer {
     }
 }
 
+
+/* Delivery */
 #delivery-form {
     margin-top: 20px;
     padding: 15px;
@@ -309,4 +321,3 @@ footer {
 #pay-now-btn:hover {
     background-color: #45a049;
 }
-
