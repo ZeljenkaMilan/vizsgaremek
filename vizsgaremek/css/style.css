@@ -34,9 +34,6 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center; 
 }
-
-
-/* Cart */
 .cart-icon {
     position: absolute;
     top: 50%;
@@ -70,7 +67,7 @@ main {
 
 
 
-/* Signup  */
+/* Signup Text Styling */
 #signup-text {
     font-size: 2rem; /* Increase font size */
     padding: 20px 0; /* Add padding above and below */
@@ -79,6 +76,7 @@ main {
     color: #ffc107; /* Optional: gives the text a yellow color */
 }
 
+/* Signup */
 
 .signup {
     padding: 20px; /* Slight padding inside the form */
@@ -89,7 +87,7 @@ main {
     margin: 30px auto; /* Added a little vertical margin for balance */
 }
 
-
+/* Form input styling */
 .signup input {
     width: 100%;
     padding: 10px;
@@ -97,8 +95,7 @@ main {
     font-size: 16px;
 }
 
-
-/* Product  */
+/* Product Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(minmax(200px, 1fr));
@@ -147,7 +144,6 @@ main {
 }
 
 
-
 /* Billing Section */
 #receipt {
     background: #222;
@@ -162,8 +158,6 @@ main {
     font-size: 1.2rem;
     margin-top: 10px;
 }
-
-
 
 /* Sign Up Form */
 form {
@@ -197,8 +191,6 @@ form button:hover {
     transform: scale(1.05);
 }
 
-
-
 /* Footer */
 footer {
     margin-top: auto;  /* Pushes footer to the bottom */
@@ -208,8 +200,6 @@ footer {
     padding: 10px;
 }
 
-
-/* About section */
 #about {
     max-width: 900px; 
     margin: 50px auto; 
@@ -285,42 +275,135 @@ footer {
     }
 }
 
-
-/* Delivery */
-#delivery-form {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-#delivery-form label {
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #ffc107;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    color: #ffc107;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Payment Section */
+#payment {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.3);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #ffc107;
+}
+
+#order-summary {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#order-items {
+    list-style: none;
+    padding: 0;
+}
+
+#order-items li {
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+/* Shipping Information */
+#delivery-form {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
-#delivery-form input {
+input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 5px;
+    background: #222;
+    color: #fff;
 }
 
+/* Payment Button */
 #pay-now-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    display: block;
+    width: 100%;
+    background: #4CAF50;
     color: white;
     border: none;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
 }
 
 #pay-now-btn:hover {
-    background-color: #45a049;
+    background: #45a049;
+    transform: scale(1.05);
 }
+
 /* Footer */
 footer {
     margin-top: auto;
@@ -483,4 +566,3 @@ footer {
     color: white;
     padding: 10px;
 }
-
