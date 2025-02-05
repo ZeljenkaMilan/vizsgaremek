@@ -26,9 +26,8 @@
     </header>
 
     <section id="billing">
-        <h2>Your items</h2>
+        <h2>Your receipt</h2>
         <div id="receipt">
-            <h3>Receipt</h3>
             <ul id="cart-items"></ul>
             <p id="total">Total: $0.00</p>
 
@@ -53,6 +52,7 @@
         <p>&copy; 2025 Webshop</p>
     </footer>
 
+    <script src="java_script/script2.js"></script>
     <script src="java_script/script.js"></script>
 
 </body>
