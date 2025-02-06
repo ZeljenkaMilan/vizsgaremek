@@ -49,7 +49,7 @@ require("php/connect.php");
                 <h3 id="name2"><?php echo htmlspecialchars($name2); ?></h3>
                 <p>$15.00</p>
                 <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)">Add to cart</button>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)); window.location.href='billing.php'">Buy now</button>
+                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15); window.location.href='billing.php'">Buy now</button>
 
             </div>
 
