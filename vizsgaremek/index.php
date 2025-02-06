@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Webshop</title>
+    <title>Home Webshop</title>
 </head>
 <body>
 
@@ -35,10 +35,13 @@ require("php/connect.php");
         <div class="product-grid">
 
             <div class="product">
-                <img src="kepek/th-1828587326.jpg" alt="Product 1">
+                <img src="kepek/th-1828587326.jpg" alt="Product 1" >
                 <h3 id="name1"><?php echo htmlspecialchars($name1); ?></h3>
                 <p>$10.00</p>
                 <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10)">Add to cart</button>
+                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10); window.location.href='billing.php'">Buy now</button>
+
+
             </div>
 
             <div class="product">
@@ -46,6 +49,8 @@ require("php/connect.php");
                 <h3 id="name2"><?php echo htmlspecialchars($name2); ?></h3>
                 <p>$15.00</p>
                 <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)">Add to cart</button>
+                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)); window.location.href='billing.php'">Buy now</button>
+
             </div>
 
         </div>
