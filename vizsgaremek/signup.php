@@ -17,7 +17,7 @@ require("php/connect.php");
     <h1>Webshop</h1>
     <nav>
         <a href="index.php">Home</a>
-        <a href="#products">Clothes</a>
+        <a href="index.php#products">Clothes</a>
         <a href="signup.php">Sign Up</a>
         <a href="about.php">About Us</a>
     </nav>
