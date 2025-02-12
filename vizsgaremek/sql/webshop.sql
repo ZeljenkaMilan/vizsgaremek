@@ -7,6 +7,13 @@ CREATE TABLE termekek (
     keszlet INT NOT NULL
 );
 
+CREATE TABLE termek_kepek (
+    azon INT AUTO_INCREMENT PRIMARY KEY,
+    termek_azon INT NOT NULL,
+    kep_url VARCHAR(255) NOT NULL,
+    FOREIGN KEY (termek_azon) REFERENCES termekek(azon) ON DELETE CASCADE
+);
+
 CREATE TABLE vasarlok (
     azon INT AUTO_INCREMENT PRIMARY KEY,
     nev VARCHAR(30) NOT NULL,
