@@ -61,8 +61,6 @@
                 <img src="kepek/<?= htmlspecialchars($kep); ?>" alt="<?= htmlspecialchars($product['nev']); ?>">
                 <h3><?= htmlspecialchars($product['nev']); ?></h3>
                 <p><?= number_format($product['ar'], 0, ',', ' ') ?> Ft</p>
-                <button class="buy-btn" onclick="event.stopPropagation(); addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>)">Add to cart</button>
-                <button class="buy-btn" onclick="event.stopPropagation(); addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>); window.location.href='billing.php'">Buy now</button>
             </div>
             <?php endforeach; ?>
         </div>
