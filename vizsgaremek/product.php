@@ -15,16 +15,24 @@ if (!$product) {
     echo "Termék nem található!";
     exit();
 }
+
+// Lekérjük a termékhez tartozó képeket
+$sql = "SELECT kep_url FROM termek_kepek WHERE termek_azon = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $product_id, PDO::PARAM_INT);
+$stmt->execute();
+$images = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+// Ha vannak képek, az elsőt használjuk fő képként
+$main_image = !empty($images) ? $images[0] : "no-image.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
-    
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title><?= htmlspecialchars($product['nev']); ?></title>
 </head>
@@ -49,9 +57,17 @@ if (!$product) {
     <!-- Product Section -->
     <section class="product-section">
         <div class="product-details">
-            <!-- Termék Kép -->
+            <!-- Termék Képek -->
             <div class="product-gallery">
-                <img src="kepek/<?= htmlspecialchars($product['kep']); ?>" alt="<?= htmlspecialchars($product['nev']); ?>" class="main-image">
+                <img src="kepek/<?= htmlspecialchars($main_image); ?>" alt="<?= htmlspecialchars($product['nev']); ?>" class="main-image">
+                
+                <?php if (count($images) > 1): ?>
+                    <div class="thumbnail-gallery">
+                        <?php foreach ($images as $image): ?>
+                            <img src="kepek/<?= htmlspecialchars($image); ?>" alt="<?= htmlspecialchars($product['nev']); ?>" class="thumbnail" onclick="changeImage(this)">
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Termék információk -->
@@ -70,7 +86,12 @@ if (!$product) {
                             <option value="large">L</option>
                         </select>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>)">Add to cart</button>
+                </div>
+
+                <!-- Kosárba rakás és Vásárlás gombok -->
+                <div class="product-buttons">
+                    <button class="buy-btn" onclick="addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>)">Add to cart</button>
+                    <button class="buy-btn" onclick="addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>); window.location.href='billing.php'">Buy now</button>
                 </div>
             </div>
         </div>
@@ -81,5 +102,10 @@ if (!$product) {
     </footer>
 
     <script src="java_script/script.js"></script>
+    <script>
+        function changeImage(imgElement) {
+            document.querySelector(".main-image").src = imgElement.src;
+        }
+    </script>
 </body>
 </html>
