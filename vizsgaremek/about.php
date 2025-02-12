@@ -14,18 +14,20 @@ require("php/connect.php");
 ?>
 
 <header>
-    <h1>Webshop</h1>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="index.php#products">Clothes</a>
-        <a href="signup.php">Sign Up</a>
-        <a href="about.php" class="active">About Us</a>
-    </nav>
-    <div class="cart-icon">
-        <a href="billing.php">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-        </a>
+<div class="nav-container">
+        <div class="logo">Webshop</div>
+        <nav>
+            <a href="index.php" class="active">Home</a>
+            <a href="index.php#products">Clothes</a>
+            <a href="signup.php">Sign Up</a>
+            <a href="about.php">About Us</a>
+        </nav>
+        <div class="cart-icon">
+            <a href="billing.php">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
     </div>
 </header>
 Í
