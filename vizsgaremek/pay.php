@@ -13,11 +13,14 @@ require("php/connect.php");
 ?>
 
 <header>
-    <h1>Webshop</h1>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="billing.php">Back to Cart</a>
-    </nav>
+    <div class="nav-container">
+        <div class="logo">Webshop</div>
+        <nav>
+            <a href="index.php" class="active">Home</a>
+            <a href="billing.php">Back to Cart</a>
+            <a href="signup.php">Sign Up</a>
+        </nav>
+    </div>
 </header>
 
 <section id="payment">
@@ -57,52 +60,7 @@ require("php/connect.php");
     <p>&copy; 2025 Webshop</p>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
-
-        if (!orderDetails || orderDetails.cartItems.length === 0) {
-            document.getElementById("order-summary").innerHTML = "<p>No order found.</p>";
-            return;
-        }
-
-        // Megjeleníti a rendelési tételeket
-        const orderItems = document.getElementById("order-items");
-        orderDetails.cartItems.forEach(item => {
-            const li = document.createElement("li");
-            li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-            orderItems.appendChild(li);
-        });
-
-        document.getElementById("order-total").textContent = `Total: $${orderDetails.total}`;
-        const deliveryMethod = orderDetails.delivery === "home" ? "Home Delivery" : "In-Store Pickup";
-        document.getElementById("delivery-method").textContent = `Delivery Method: ${deliveryMethod}`;
-
-        // Ha Home Delivery-t választott, jelenjen meg a szállítási mező
-        if (orderDetails.delivery === "home") {
-            document.getElementById("delivery-form").style.display = "block";
-        }
-
-        document.getElementById("pay-now-btn").addEventListener("click", function() {
-            if (orderDetails.delivery === "home") {
-                // Ellenőrizzük, hogy minden mező ki van-e töltve
-                const name = document.getElementById("name").value.trim();
-                const address = document.getElementById("address").value.trim();
-                const city = document.getElementById("city").value.trim();
-                const zip = document.getElementById("zip").value.trim();
-                const phone = document.getElementById("phone").value.trim();
-
-                if (!name || !address || !city || !zip || !phone) {
-                    alert("Please fill in all shipping details before proceeding!");
-                    return;
-                }
-            }
-
-            alert("Redirecting to payment gateway...");
-            window.location.href = "payment_gateway.php"; // Itt mehet egy igazi fizetési oldalra
-        });
-    });
-</script>
-
+<script src="java_script/script2.js"></script>
+<script src="java_script/script.js"></script>
 </body>
 </html>
