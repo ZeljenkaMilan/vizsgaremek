@@ -42,22 +42,29 @@
     <section id="products">
         <h2>Trending Now</h2>
         <div class="product-grid">
-            <div class="product">
-                <img src="kepek/th-1828587326.jpg" alt="Product 1">
-                <h3><?php echo htmlspecialchars($name1); ?></h3>
-                <p>$10.00</p>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10)">Add to cart</button>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name1); ?>', 10); window.location.href='billing.php'">Buy now</button>
+            <?php
+            // Termékek lekérdezése az adatbázisból
+            $sql = "SELECT azon, nev, ar FROM termekek";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            foreach ($products as $product): 
+                // A termék első képének lekérdezése
+                $sql = "SELECT kep_url FROM termek_kepek WHERE termek_azon = :id LIMIT 1";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':id', $product['azon'], PDO::PARAM_INT);
+                $stmt->execute();
+                $kep = $stmt->fetchColumn() ?: 'no-image.jpg'; // Ha nincs kép, egy alapértelmezettet használ
+            ?>
+            <div class="product" onclick="redirectToProduct(<?= $product['azon']; ?>)">
+                <img src="kepek/<?= htmlspecialchars($kep); ?>" alt="<?= htmlspecialchars($product['nev']); ?>">
+                <h3><?= htmlspecialchars($product['nev']); ?></h3>
+                <p><?= number_format($product['ar'], 0, ',', ' ') ?> Ft</p>
+                <button class="buy-btn" onclick="event.stopPropagation(); addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>)">Add to cart</button>
+                <button class="buy-btn" onclick="event.stopPropagation(); addToCart('<?= htmlspecialchars($product['nev']); ?>', <?= $product['ar']; ?>); window.location.href='billing.php'">Buy now</button>
             </div>
-            <div class="product">
-                <img src="kepek/th-4073543462.jpg" alt="Product 2">
-                <h3><?php echo htmlspecialchars($name2); ?></h3>
-                <p>$15.00</p>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15)">Add to cart</button>
-                <button class="buy-btn" onclick="addToCart('<?php echo htmlspecialchars($name2); ?>', 15); window.location.href='billing.php'">Buy now</button>
-
-            </div>
+            <?php endforeach; ?>
         </div>
     </section>
 </main>
