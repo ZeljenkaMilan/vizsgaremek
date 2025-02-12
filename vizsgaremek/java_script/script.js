@@ -1,73 +1,74 @@
 let cart = [];
 
-// Add product to cart
+// Termék oldalra irányítás kattintáskor
+function redirectToProduct(productId) {
+    window.location.href = 'product.php?id=' + productId;
+}
+
+// Kosárhoz adás
 function addToCart(productName, price) {
     cart.push({ name: productName, price: price });
     saveCartToLocalStorage();
     updateReceipt();
-    updateCartCount(); // Update cart count after adding a product
+    updateCartCount(); // Frissítjük a kosár ikonját
 }
 
-// Remove product from cart
+// Kosárból eltávolítás
 function removeFromCart(index) {
-    cart.splice(index, 1); // Remove the item at the specified index
+    cart.splice(index, 1);
     saveCartToLocalStorage();
     updateReceipt();
-    updateCartCount(); // Update cart count after removing a product
+    updateCartCount();
 }
 
-// Update receipt on the billing page
+// Kosár frissítése a fizetési oldalon
 function updateReceipt() {
     const cartItems = document.getElementById('cart-items');
     const totalDisplay = document.getElementById('total');
-    
-    // If these elements don't exist, just return
+
     if (!cartItems || !totalDisplay) return;
 
-    cartItems.innerHTML = ''; // Clear current items
+    cartItems.innerHTML = '';
     let total = 0;
 
     cart.forEach((item, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
-            ${item.name} - $${item.price.toFixed(2)} 
+            ${item.name} - ${item.price.toFixed(2)} Ft
             <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
         `;
         cartItems.appendChild(li);
         total += item.price;
     });
 
-    totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
+    totalDisplay.textContent = `Total: ${total.toFixed(2)} Ft`;
 }
 
-// Update cart count on the index page
+// Kosár ikon frissítése
 function updateCartCount() {
     const cartCount = document.getElementById('cart-count');
-    
-    // If cart-count element doesn't exist, just return
     if (!cartCount) return;
-
     cartCount.textContent = cart.length;
 }
 
-// Save cart to localStorage
+// Kosár mentése
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Load cart from localStorage
+// Kosár betöltése
 function loadCartFromLocalStorage() {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
         updateReceipt();
-        updateCartCount(); // Make sure cart count is updated after loading the cart
+        updateCartCount();
     }
 }
 
-// Load the cart when the page loads
+// Betöltéskor lefutó kód
 document.addEventListener('DOMContentLoaded', function () {
     loadCartFromLocalStorage();
-    updateCartCount(); // Update cart count when the page loads
-    updateReceipt(); // Update receipt for billing page if necessary
+    updateCartCount();
+    updateReceipt();
 });
