@@ -35,6 +35,64 @@ header {
     text-align: center; 
 }
 
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: center; /* Középre igazítja az összes elemet */
+    align-items: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column; /* Az elemek függőlegesen lesznek, mivel a logo fent van */
+    align-items: center; /* Középre igazítja a logo-t és a linkeket */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Kis távolság a logo és a linkek között */
+}
+
+nav {
+    display: flex; /* A linkek egymás mellett lesznek */
+    flex-direction: row; /* Linkek vízszintes elrendezése */
+    justify-content: center; /* A linkek középre igazítása */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Távolság a linkek között */
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
 h2, h3, h4 {
     text-align: center;
     color: #ffc107;
@@ -200,10 +258,12 @@ form button:hover {
 footer {
     margin-top: auto;  /* Pushes footer to the bottom */
     text-align: center;
-    background: #333;
-    color: #fff;
+    background: #111;
+    color: white;
     padding: 10px;
 }
+
+
 
 #about {
     max-width: 900px; 
