@@ -16,3 +16,7 @@ VALUES
 (1, 1, 2),  -- 1. rendeléshez: 2 db Piros Póló
 (1, 2, 1);  -- 1. rendeléshez: 1 db Kék Farmer Nadrág
 
+INSERT INTO termek_kepek (termek_azon, kep_url) 
+VALUES 
+(1, 'th-1828587326.jpg'),  -- Piros Póló képe
+(2, 'th-4073543462.jpg');  -- Kék Farmer Nadrág képe
