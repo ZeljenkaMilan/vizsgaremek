@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <title>Webshop</title>
 </head>
 <body>
@@ -38,6 +40,23 @@
     </div>
 </section>
 
+    <section class="slider-section">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="kepek/th-1828587326.jpg" alt="Piros Póló">
+            </div>
+            <div class="swiper-slide">
+                <img src="kepek/th-4073543462.jpg" alt="Kék Farmer">
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+    
 <main>
     <section id="products">
         <h2>Trending Now</h2>
