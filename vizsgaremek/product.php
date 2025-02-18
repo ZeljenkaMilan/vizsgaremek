@@ -32,14 +32,15 @@ $main_image = !empty($images) ? $images[0] : "no-image.jpg";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title><?= htmlspecialchars($product['nev']); ?></title>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo">Webshop</div>
+        <div class="logo">
+    <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
+    </div>
             <nav>
                 <a href="index.php">Home</a>
                 <a href="signup.php">Sign Up</a>
@@ -57,18 +58,21 @@ $main_image = !empty($images) ? $images[0] : "no-image.jpg";
     <!-- Product Section -->
     <section class="product-section">
         <div class="product-details">
-            <!-- Termék Képek -->
-            <div class="product-gallery">
-                <img src="kepek/<?= htmlspecialchars($main_image); ?>" alt="<?= htmlspecialchars($product['nev']); ?>" class="main-image">
-                
-                <?php if (count($images) > 1): ?>
-                    <div class="thumbnail-gallery">
-                        <?php foreach ($images as $image): ?>
-                            <img src="kepek/<?= htmlspecialchars($image); ?>" alt="<?= htmlspecialchars($product['nev']); ?>" class="thumbnail" onclick="changeImage(this)">
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+<!-- Termék Képcsúszka -->
+        <div class="product-slider">
+    <button class="prev" onclick="prevImage()">&#10094;</button>
+    
+    <div class="slider-container">
+        <?php foreach ($images as $index => $image): ?>
+            <img src="kepek/<?= htmlspecialchars($image); ?>" 
+                 alt="<?= htmlspecialchars($product['nev']); ?>" 
+                 class="slide <?= $index === 0 ? 'active' : '' ?>" 
+                 id="slide-<?= $index ?>">
+        <?php endforeach; ?>
+    </div>
+
+    <button class="next" onclick="nextImage()">&#10095;</button>
+</div>
 
             <!-- Termék információk -->
             <div class="product-info">
@@ -98,7 +102,7 @@ $main_image = !empty($images) ? $images[0] : "no-image.jpg";
     </section>
 
     <footer>
-        <p>&copy; 2025 Webshop | Elevate Your Game</p>
+         <p>&copy; 2025 Heet Clothing | The style that never burns out!</p>
     </footer>
 
     <script src="java_script/script.js"></script>
