@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>About Us</title>
 </head>
@@ -16,7 +15,9 @@ require("php/connect.php");
 
 <header>
 <div class="nav-container">
-        <div class="logo">Webshop</div>
+<div class="logo">
+    <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
+    </div>
         <nav>
             <a href="index.php">Home</a>
             <a href="index.php#products">Clothes</a>
@@ -54,7 +55,7 @@ require("php/connect.php");
 
 <script src="java_script/script.js"></script>
 <footer>
-    <p>&copy; 2025 Webshop</p>
+<p>&copy; 2025 Heet Clothing | The style that never burns out!</p>
 </footer>
 
 </body>
