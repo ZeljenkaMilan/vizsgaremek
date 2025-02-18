@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <title>Webshop</title>
+    <title>Heet Clothing</title>
 </head>
 <body>
 
@@ -16,7 +15,9 @@
 
 <header>
     <div class="nav-container">
-        <div class="logo">Webshop</div>
+    <div class="logo">
+    <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
+    </div>
         <nav>
             <a href="index.php" class="current-page">Home</a>
             <a href="#products">Clothes</a>
@@ -34,8 +35,8 @@
 
 <section class="hero" style="background-image: url('kepek/hero-bg.jpg');">
     <div class="hero-content">
-        <h1>MOVE WITH STYLE</h1>
-        <p>Innovative design. Unmatched comfort. Be unstoppable.</p>
+        <h1>HEET UP YOUR STYLE</h1>
+        <p>Fuel your ambition. Stand out. Never slow down.</p>
         <a href="#products" class="shop-now-btn">Shop Now</a>
     </div>
 </section>
@@ -44,10 +45,10 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="kepek/th-1828587326.jpg" alt="Piros Póló">
+                <img src="kepek/person_hoodie_ front.png" alt="Piros Póló">
             </div>
             <div class="swiper-slide">
-                <img src="kepek/th-4073543462.jpg" alt="Kék Farmer">
+                <img src="kepek/person_hoodie_ back.png" alt="Kék Farmer">
             </div>
         </div>
         <div class="swiper-button-prev"></div>
@@ -87,7 +88,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Webshop | Elevate Your Game</p>
+    <p>&copy; 2025 Heet Clothing | The style that never burns out!</p>
 </footer>
 
 <script src="java_script/script.js"></script>
