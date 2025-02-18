@@ -18,9 +18,9 @@ require("php/connect.php");
 <div class="nav-container">
         <div class="logo">Webshop</div>
         <nav>
-            <a href="index.php" class="active">Home</a>
+            <a href="index.php" >Home</a>
             <a href="index.php#products">Clothes</a>
-            <a href="signup.php">Sign Up</a>
+            <a href="signup.php" class="current-page">Sign Up</a>
             <a href="about.php">About Us</a>
         </nav>
         <div class="cart-icon">
