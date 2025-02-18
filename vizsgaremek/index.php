@@ -18,7 +18,7 @@
     <div class="nav-container">
         <div class="logo">Webshop</div>
         <nav>
-            <a href="index.php" class="active">Home</a>
+            <a href="index.php" class="current-page">Home</a>
             <a href="#products">Clothes</a>
             <a href="signup.php">Sign Up</a>
             <a href="about.php">About Us</a>
@@ -40,7 +40,7 @@
     </div>
 </section>
 
-    <section class="slider-section">
+<section class="slider-section">
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
