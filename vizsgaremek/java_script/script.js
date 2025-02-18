@@ -96,6 +96,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//Product page swiper
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showImage(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+            slide.classList.add("active");
+        }
+    });
+}
+
+function prevImage() {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    showImage(currentIndex);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    showImage(currentIndex);
+}
+
+
+
+
 
 
 //Order Summarizing Process
