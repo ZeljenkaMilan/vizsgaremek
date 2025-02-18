@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,11 @@
     
 <header>
 <div class="nav-container">
-        <div class="logo">Webshop</div>
+<div class="logo">
+    <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
+    </div>
         <nav>
-            <a href="index.php" class="active">Home</a>
+            <a href="index.php" >Home</a>
             <a href="index.php#products">Clothes</a>
             <a href="signup.php">Sign Up</a>
             <a href="about.php">About Us</a>
@@ -51,10 +53,9 @@
 
     
     <footer>
-        <p>&copy; 2025 Webshop</p>
+    <p>&copy; 2025 Heet Clothing | The style that never burns out!</p>
     </footer>
 
-    <script src="java_script/script2.js"></script>
     <script src="java_script/script.js"></script>
 
 </body>
