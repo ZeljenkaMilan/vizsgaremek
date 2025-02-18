@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,9 @@ require("php/connect.php");
 
 <header>
     <div class="nav-container">
-        <div class="logo">Webshop</div>
+    <div class="logo">
+    <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
+    </div>
         <nav>
             <a href="index.php" class="active">Home</a>
             <a href="billing.php">Back to Cart</a>
@@ -57,10 +59,10 @@ require("php/connect.php");
 </section>
 
 <footer>
-    <p>&copy; 2025 Webshop</p>
+    <p>&copy; 2025 Heet Clothing | The style that never burns out!</p>
 </footer>
 
-<script src="java_script/script2.js"></script>
+
 <script src="java_script/script.js"></script>
 </body>
 </html>
