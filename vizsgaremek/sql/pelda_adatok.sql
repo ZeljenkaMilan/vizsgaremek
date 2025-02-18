@@ -1,7 +1,7 @@
 INSERT INTO termekek (nev, leiras, kategoria, ar, keszlet) 
 VALUES 
-('Piros Póló', 'Egy egyszerű, piros színű póló, pamut anyagból.', 'póló', 2500, 100),
-('Kék Farmer Nadrág', 'Klasszikus kék farmer nadrág, kényelmes viselet.', 'nadrág', 7999, 50);
+('Fekete lógós póló', 'Egy egyszerű, fekete színű póló, pamut anyagból.', 'póló', 5000, 100),
+('Fekete lógós pulóver', 'Klasszikus fekete pulóver, kényelmes viselet.', 'pulóver', 12000, 50);
 
 INSERT INTO vasarlok (nev, email, telefon, cim) 
 VALUES 
@@ -13,10 +13,13 @@ VALUES
 
 INSERT INTO tetelek (rendeles_azon, termek_azon, mennyiseg)
 VALUES
-(1, 1, 2),  -- 1. rendeléshez: 2 db Piros Póló
-(1, 2, 1);  -- 1. rendeléshez: 1 db Kék Farmer Nadrág
+(1, 1, 2),  -- 1. rendeléshez: 2 db Fekete logos polo
+(1, 2, 1);  -- 1. rendeléshez: 1 db Fekete logos pulover
+
 
 INSERT INTO termek_kepek (termek_azon, kep_url) 
 VALUES 
-(1, 'th-1828587326.jpg'),  -- Piros Póló képe
-(2, 'th-4073543462.jpg');  -- Kék Farmer Nadrág képe
+(1, 'black_logo_tshirt_front.png'),  -- Fekete logos póló (elöl)
+(1, 'black_logo_tshirt_back.png'),   -- Fekete logos póló (hátul)
+(2, 'black_logo_hoodie_front.png'),  -- Fekete logos pulóver (elöl)
+(2, 'black_logo_hoodie_back.png');   -- Fekete logos pulóver (hátul)
