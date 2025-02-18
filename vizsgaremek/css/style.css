@@ -57,10 +57,9 @@ nav a.current-page {
     padding-bottom: 5px; /* Kicsit lentebb tolja a szöveget */
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px; /* Kis távolság a logo és a linkek között */
+.logo img {
+    height: 70px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
 }
 
 nav {
@@ -188,6 +187,15 @@ main {
     object-fit: contain; /* Megőrzi az arányokat */
 }
 
+/* Swiper Navigation Buttons */
+.swiper-button-prev, .swiper-button-next {
+    color: black !important; /* Change arrow color to black */
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination-bullet {
+    background: black !important; /* Change pagination dots to black */
+}
 
 /* Signup Text Styling */
 #signup-text {
@@ -197,6 +205,53 @@ main {
     margin-top: 10px; /* Optional: adds space from the top of the page */
     color: #ffc107; /* Optional: gives the text a yellow color */
 }
+/*Product page image swiper*/
+.product-slider {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 /* Signup */
 
@@ -368,9 +423,10 @@ button:hover {
     background: #ffd54f;
 }
 .remove-btn {
+    font-size: 14px;
     display: inline-block;
     margin-left: 10px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     background-color: #ff4d4d;
     color: white;
     border: none;
