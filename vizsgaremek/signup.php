@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Signup</title>
 </head>
-<body>
+<body class="reptile-bg">
 
 <?php
 require("php/connect.php");
@@ -15,7 +15,7 @@ require("php/connect.php");
 
 <header>
 <div class="nav-container">
-<div class="logo">
+<div class="logo" onclick="window.location.href='index.php'">
     <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
     </div>
         <nav>
@@ -24,12 +24,22 @@ require("php/connect.php");
             <a href="signup.php" class="current-page">Sign Up</a>
             <a href="about.php">About Us</a>
         </nav>
-        <div class="cart-icon">
-            <a href="billing.php">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </a>
-        </div>
+        <div class="nav-icons">
+    <!-- Kosár ikon -->
+    <div class="cart-icon">
+        <a href="billing.php">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+
+    <!-- Felhasználó ikon -->
+    <div class="user-icon">
+        <a href="login.php">
+            <i class="fas fa-user"></i>
+        </a>
+    </div>
+</div>
     </div>
 </header>
 
