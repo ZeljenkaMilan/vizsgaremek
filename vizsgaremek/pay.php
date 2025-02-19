@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Payment</title>
 </head>
-<body>
+<body class="reptile-bg">
 
 <?php
 require("php/connect.php");
@@ -14,7 +14,7 @@ require("php/connect.php");
 
 <header>
     <div class="nav-container">
-    <div class="logo">
+    <div class="logo" onclick="window.location.href='index.php'">
     <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
     </div>
         <nav>
