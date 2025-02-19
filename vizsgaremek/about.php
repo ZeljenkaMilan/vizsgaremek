@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>About Us</title>
 </head>
-<body>
+<body class="reptile-bg">
 
 <?php
 require("php/connect.php");
@@ -15,7 +15,7 @@ require("php/connect.php");
 
 <header>
 <div class="nav-container">
-<div class="logo">
+<div class="logo" onclick="window.location.href='index.php'">
     <img src="kepek/heet-logo-white.png" alt="Webshop Logo">
     </div>
         <nav>
@@ -24,32 +24,42 @@ require("php/connect.php");
             <a href="signup.php">Sign Up</a>
             <a href="about.php" class="current-page">About Us</a>
         </nav>
-        <div class="cart-icon">
-            <a href="billing.php">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </a>
-        </div>
+        <div class="nav-icons">
+    <!-- Kosár ikon -->
+    <div class="cart-icon">
+        <a href="billing.php">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+
+    <!-- Felhasználó ikon -->
+    <div class="user-icon">
+        <a href="login.php">
+            <i class="fas fa-user"></i>
+        </a>
+    </div>
+</div>
     </div>
 </header>
-Í
+
 <main>
     <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to our webshop! We are passionate about providing high-quality, trendy clothing that fits a wide range of styles and preferences.</p>
+        <h2>About Heet</h2>
+        <p>Welcome to Heet – where fashion meets passion. We are dedicated to crafting high-quality, stylish apparel that empowers confidence and individuality.</p>
         
         <h3>Who Are We?</h3>
-        <p>We are a dedicated team of fashion enthusiasts who aim to bring affordable and stylish clothing to everyone. Whether you're looking for casual outfits, workwear, or something for a special occasion, we've got you covered!</p>
+        <p>Heet is more than just a clothing brand; it's a movement. Designed for trendsetters and go-getters, we create fashion-forward pieces that blend comfort, quality, and bold aesthetics.</p>
         
         <h3>Who Is Our Target Audience?</h3>
-        <p>Our target audience includes individuals of all ages who value fashion, quality, and affordability. We cater to both men and women, with a focus on providing diverse options for different tastes and lifestyles.</p>
+        <p>Our brand is built for those who live life on their own terms. Whether you're into streetwear, casual fits, or standout statement pieces, Heet has something for you. We cater to both men and women who value self-expression through fashion.</p>
         
         <h3>Where Can You Find Us?</h3>
-        <p>You can visit our store in person at the following address:</p>
-        <p><strong>Webshop Store</strong><br>
+        <p>Shop Heet online or visit us in person:</p>
+        <p><strong>Heet Store</strong><br>
            123 Fashion Street,<br>
            Style City, SC 98765</p>
-        <p>If you have any questions, feel free to contact us or stop by our store!</p>
+        <p>Got questions? Reach out to us or drop by – let’s turn up the heat in fashion together!</p>
     </section>
 </main>
 
