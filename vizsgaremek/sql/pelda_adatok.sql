@@ -1,7 +1,7 @@
 INSERT INTO termekek (nev, leiras, kategoria, ar, keszlet) 
 VALUES 
-('Fekete lógós póló', 'Egy egyszerű, fekete színű póló, pamut anyagból.', 'póló', 5000, 100),
-('Fekete lógós pulóver', 'Klasszikus fekete pulóver, kényelmes viselet.', 'pulóver', 12000, 50);
+('Fekete, logós póló', 'Egy egyszerű, fekete színű póló, pamut anyagból.', 'póló', 5000, 100),
+('Fekete, logós pulóver', 'Klasszikus fekete pulóver, kényelmes viselet.', 'pulóver', 12000, 50);
 
 INSERT INTO vasarlok (nev, email, telefon, cim) 
 VALUES 
