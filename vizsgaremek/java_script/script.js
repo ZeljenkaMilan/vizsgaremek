@@ -1,40 +1,70 @@
 let cart = [];
 
-// Add product to cart
-function addToCart(productName, price) {
-    cart.push({ name: productName, price: price });
+// Add product to cart (with quantity handling)
+function addToCart(productName, price, imageUrl) {
+    let existingProduct = cart.find(item => item.name === productName);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1; // Ha már létezik, növeli a mennyiséget
+    } else {
+        cart.push({ name: productName, price: price, imageUrl: imageUrl, quantity: 1 });
+    }
+
     saveCartToLocalStorage();
     updateReceipt();
-    updateCartCount(); // Update cart count after adding a product
+    updateCartCount();
 }
 
-// Remove product from cart
-function removeFromCart(index) {
-    cart.splice(index, 1); // Remove the item at the specified index
+// Increase quantity of a product
+function increaseQuantity(productName) {
+    let product = cart.find(item => item.name === productName);
+
+    if (product) {
+        product.quantity += 1;
+    }
+
     saveCartToLocalStorage();
     updateReceipt();
-    updateCartCount(); // Update cart count after removing a product
+    updateCartCount();
 }
 
-// Update receipt on the billing page
+// Remove product from cart (reduce quantity or remove if 1)
+function removeFromCart(productName) {
+    let productIndex = cart.findIndex(item => item.name === productName);
+
+    if (productIndex !== -1) {
+        if (cart[productIndex].quantity > 1) {
+            cart[productIndex].quantity -= 1;
+        } else {
+            cart.splice(productIndex, 1); // Ha már csak 1 db van, akkor teljesen eltávolítjuk
+        }
+    }
+
+    saveCartToLocalStorage();
+    updateReceipt();
+    updateCartCount();
+}
+
+// Update receipt on the billing page (with plus/minus buttons)
 function updateReceipt() {
     const cartItems = document.getElementById('cart-items');
     const totalDisplay = document.getElementById('total');
-    
-    // If these elements don't exist, just return
+
     if (!cartItems || !totalDisplay) return;
 
     cartItems.innerHTML = ''; // Clear current items
     let total = 0;
 
-    cart.forEach((item, index) => {
+    cart.forEach(item => {
         const li = document.createElement('li');
         li.innerHTML = `
-            ${item.name} - $${item.price.toFixed(2)} 
-            <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+            <img src="${item.imageUrl}" alt="${item.name}" class="cart-item-image">
+            ${item.name} - $${item.price.toFixed(2)} x ${item.quantity}
+            <button class="quantity-btn" onclick="removeFromCart('${item.name}')">−</button>
+            <button class="quantity-btn" onclick="increaseQuantity('${item.name}')">+</button>
         `;
         cartItems.appendChild(li);
-        total += item.price;
+        total += item.price * item.quantity;
     });
 
     totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
@@ -43,11 +73,10 @@ function updateReceipt() {
 // Update cart count on the index page
 function updateCartCount() {
     const cartCount = document.getElementById('cart-count');
-    
-    // If cart-count element doesn't exist, just return
     if (!cartCount) return;
 
-    cartCount.textContent = cart.length;
+    let itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = itemCount;
 }
 
 // Save cart to localStorage
@@ -61,16 +90,17 @@ function loadCartFromLocalStorage() {
     if (savedCart) {
         cart = JSON.parse(savedCart);
         updateReceipt();
-        updateCartCount(); // Make sure cart count is updated after loading the cart
+        updateCartCount();
     }
 }
 
 // Load the cart when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     loadCartFromLocalStorage();
-    updateCartCount(); // Update cart count when the page loads
-    updateReceipt(); // Update receipt for billing page if necessary
+    updateCartCount();
+    updateReceipt();
 });
+
 
 // Redirect to product page on click
 function redirectToProduct(productId) {
